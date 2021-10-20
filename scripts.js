@@ -68,11 +68,11 @@ function checkGame(player, computer) {
     return 0
   }
 }
-console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
-console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
-console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
-console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
-console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
+// console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
+// console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
+// console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
+// console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
+// console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
 
 /**
  * Spilar einn leik.
