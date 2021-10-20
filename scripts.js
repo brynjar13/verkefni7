@@ -25,21 +25,22 @@ function isValidBestOf(bestOf) {
 
   return false;
 }
-console.assert(isValidBestOf(1) === true, '1 er valid best of');
-console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
-console.assert(isValidBestOf(9) === true, '9 er valid best of');
-console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
+// console.assert(isValidBestOf(1) === true, '1 er valid best of');
+// console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
+// console.assert(isValidBestOf(9) === true, '9 er valid best of');
+// console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
 
 function playAsText(play) {
-  if (play === '1') {
+  let num = parseInt(play)
+  if (num === 1) {
     return 'Skæri';
   }
 
-  if (play === '2') {
+  if (num === 2) {
     return 'Blað';
   }
 
-  if (play === '3'); {
+  if (num === 3); {
     return 'Steinn';
   }
 }
@@ -82,12 +83,12 @@ function checkGame(player, computer) {
 function round() {
   // TODO útfæra
   // 1. Spyrja um hvað spilað, ef cancel, hætta
-  let player = prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn');
+  let player = parseInt(prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn'));
   if (player === null) {
     return;
   }
   // 2. Ef ógilt, tölva vinnur
-  if (player !== '1' && player !== '2' && player !== '3') {
+  if (player !== 1 && player !== 2 && player !== 3) {
     alert('þetta er ekki löglegt gildi, tölva vinnur');
     return -1;
   }
@@ -95,17 +96,17 @@ function round() {
   let computer = Math.floor(Math.random() * 2 + 1);
   // 4. Nota `checkGame()` til að finna hver vann
   if (checkGame(player,computer) === -1) {
-    alert('tölva vinnur');
+    alert(`þú valdir ${playAsText(player)} og tölvan valdi ${playAsText(computer)}, þú tapar`);
     return -1;
   }
   
   if (checkGame(player,computer) === 0) {
-    alert('jafntefli');
+    alert(`þú valdir ${playAsText(player)} og tölvan valdi ${playAsText(computer)}, það er jafntefli`);
     return 0;
   }
 
   if (checkGame(player,computer) === 1) {
-    alert('þú vinnur');
+    alert(`þú valdir ${playAsText(player)} og tölvan valdi ${playAsText(computer)}, þú vinnur`);
     return 1;
   }
 }
