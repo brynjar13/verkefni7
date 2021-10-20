@@ -118,10 +118,14 @@ function round() {
  * Spilar leik og bætir útkomu (sigur eða tap) við í viðeigandi global breytu.
  */
 function play() {
-  // TODO útfæra
   // 1. Spyrja um fjölda leikja
+  let fl = prompt('Hvernig bestof leik viltu? þarf að vera oddatala minni en 10');
   // 2. Staðfesta að fjöldi leikja sé gilt gildi
+  if (isValidBestOf(fl) === false) {
+    return console.error('þarf að vera oddatala á bilinu 0-10');
+  }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
+  while (fl)
   // 4. Birta hvort spilari eða tölva vann
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
