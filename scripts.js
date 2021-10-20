@@ -126,10 +126,10 @@ function play() {
     return console.error('þarf að vera oddatala á bilinu 0-10');
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
-  let i = 0;
-  let j = 0;
   switch (fl) {
     case 1:
+      let i = 0
+      let j = 0
       while (i !== 1 || j !== -1) {
         let r = round();
         if (r === 1) {
@@ -139,6 +139,7 @@ function play() {
           j--;
         }
         else if (r === null) {
+          alert('Þú hættir leik')
           break;
         }
         else {
