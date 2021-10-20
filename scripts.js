@@ -19,11 +19,11 @@ let losses = 0;
  */
 function isValidBestOf(bestOf) {
   let bestof = parseInt(bestOf)
-  if (bestof < 10 && bestof%2 === 1){
-    return true
+  if (bestof < 10 && bestof%2 === 1) {
+    return true;
   }
 
-  return false
+  return false;
 }
 console.assert(isValidBestOf(1) === true, '1 er valid best of');
 console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
@@ -32,15 +32,16 @@ console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
 
 function playAsText(play) {
   if (play === '1') {
-    return 1
+    return 'Skæri';
   }
 
   if (play === '2') {
-    return 2
+    return 'Blað';
   }
 
-  if (play === '3');
-  return 3
+  if (play === '3'); {
+    return 'Steinn';
+  }
 }
 // console.assert(playAsText('1') === 'Skæri', '1 táknar skæri');
 // console.assert(playAsText('2') === 'Blað', '2 táknar blað');
@@ -54,18 +55,18 @@ function playAsText(play) {
  * @returns -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function checkGame(player, computer) {
-  let player_number = parseInt(player)
-  let computer_number = parseInt(computer)
+  let player_number = parseInt(player);
+  let computer_number = parseInt(computer);
   if (player_number === 1 && computer_number === 2 || player_number === 2 && computer_number === 3 || player_number === 3 && computer_number === 1) {
-    return 1
+    return 1;
   }
 
   if (player_number === 1 && computer_number === 3 || player_number === 2 && computer_number === 1 || player_number === 3 && computer_number === 2) {
-    return -1
+    return -1;
   }
 
   if (player_number === 1 && computer_number === 1 || player_number === 2 && computer_number === 2 || player_number === 3 && computer_number === 3) {
-    return 0
+    return 0;
   }
 }
 // console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
@@ -81,31 +82,31 @@ function checkGame(player, computer) {
 function round() {
   // TODO útfæra
   // 1. Spyrja um hvað spilað, ef cancel, hætta
-  let player = prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn')
+  let player = prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn');
   if (player === null) {
     return;
   }
   // 2. Ef ógilt, tölva vinnur
   if (player !== '1' && player !== '2' && player !== '3') {
-    alert('þetta er ekki löglegt gildi, tölva vinnur')
-    return -1
+    alert('þetta er ekki löglegt gildi, tölva vinnur');
+    return -1;
   }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 2 + 1)` sem skilar heiltölu á [1, 3]
-  let computer = Math.floor(Math.random() * 2 + 1)
+  let computer = Math.floor(Math.random() * 2 + 1);
   // 4. Nota `checkGame()` til að finna hver vann
   if (checkGame(player,computer) === -1) {
-    alert('tölva vinnur')
-    return -1
+    alert('tölva vinnur');
+    return -1;
   }
   
   if (checkGame(player,computer) === 0) {
-    alert('jafntefli')
-    return 0
+    alert('jafntefli');
+    return 0;
   }
 
   if (checkGame(player,computer) === 1) {
-    alert('þú vinnur')
-    return 1
+    alert('þú vinnur');
+    return 1;
   }
 }
 // 5. Birta hver vann
