@@ -18,14 +18,29 @@ let losses = 0;
  * @return {boolean} true eða false
  */
 function isValidBestOf(bestOf) {
-  // TODO útfæra
+  let bestof = parseInt(bestOf)
+  if (bestof < 10 && bestof%2 === 1){
+    return true
+  }
+
+  return false
 }
-// console.assert(isValidBestOf(1) === true, '1 er valid best of');
-// console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
-// console.assert(isValidBestOf(9) === true, '9 er valid best of');
+console.assert(isValidBestOf(1) === true, '1 er valid best of');
+console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
+console.assert(isValidBestOf(9) === true, '9 er valid best of');
+console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
 
 function playAsText(play) {
-  // TODO útfæra
+  if (play === '1') {
+    return 1
+  }
+
+  if (play === '2') {
+    return 2
+  }
+
+  if (play === '3');
+  return 3
 }
 // console.assert(playAsText('1') === 'Skæri', '1 táknar skæri');
 // console.assert(playAsText('2') === 'Blað', '2 táknar blað');
@@ -39,13 +54,25 @@ function playAsText(play) {
  * @returns -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function checkGame(player, computer) {
-  // TODO útfæra
+  let player_number = parseInt(player)
+  let computer_number = parseInt(computer)
+  if (player_number === 1 && computer_number === 2 || player_number === 2 && computer_number === 3 || player_number === 3 && computer_number === 1) {
+    return 1
+  }
+
+  if (player_number === 1 && computer_number === 3 || player_number === 2 && computer_number === 1 || player_number === 3 && computer_number === 2) {
+    return -1
+  }
+
+  if (player_number === 1 && computer_number === 1 || player_number === 2 && computer_number === 2 || player_number === 3 && computer_number === 3) {
+    return 0
+  }
 }
-// console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
-// console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
-// console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
-// console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
-// console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
+console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
+console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
+console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
+console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
+console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
 
 /**
  * Spilar einn leik.
