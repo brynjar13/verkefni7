@@ -18,7 +18,7 @@ let losses = 0;
  * @return {boolean} true eða false
  */
 function isValidBestOf(bestOf) {
-  let bestof = parseInt(bestOf)
+  let bestof = parseInt(bestOf,10)
   if (bestof < 10 && bestof%2 === 1) {
     return true;
   }
@@ -31,7 +31,7 @@ function isValidBestOf(bestOf) {
 // console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
 
 function playAsText(play) {
-  let num = parseInt(play)
+  let num = parseInt(play,10)
   if (num === 1) {
     return 'Skæri';
   }
@@ -56,8 +56,8 @@ function playAsText(play) {
  * @returns -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function checkGame(player, computer) {
-  let player_number = parseInt(player);
-  let computer_number = parseInt(computer);
+  let player_number = parseInt(player,10);
+  let computer_number = parseInt(computer,10);
   if (player_number === 1 && computer_number === 2 || player_number === 2 && computer_number === 3 || player_number === 3 && computer_number === 1) {
     return 1;
   }
@@ -83,10 +83,11 @@ function checkGame(player, computer) {
 function round() {
   // TODO útfæra
   // 1. Spyrja um hvað spilað, ef cancel, hætta
-  let player = parseInt(prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn'));
+  let player = prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn');
   if (player === null) {
-    return;
+    return null;
   }
+  player = parseInt(player)
   // 2. Ef ógilt, tölva vinnur
   if (player !== 1 && player !== 2 && player !== 3) {
     alert('þetta er ekki löglegt gildi, tölva vinnur');
@@ -119,13 +120,32 @@ function round() {
  */
 function play() {
   // 1. Spyrja um fjölda leikja
-  let fl = prompt('Hvernig bestof leik viltu? þarf að vera oddatala minni en 10');
+  let fl = parseInt(prompt('Hvernig bestof leik viltu? þarf að vera oddatala minni en 10'),10);
   // 2. Staðfesta að fjöldi leikja sé gilt gildi
   if (isValidBestOf(fl) === false) {
     return console.error('þarf að vera oddatala á bilinu 0-10');
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
-  while (fl)
+  let i = 0;
+  let j = 0;
+  switch (fl) {
+    case 1:
+      while (i !== 1 || j !== -1) {
+        let r = round();
+        if (r === 1) {
+          i++;
+        }
+        else if (r === -1) {
+          j--;
+        }
+        else if (r === null) {
+          break;
+        }
+        else {
+          {};
+        }
+      }
+  }
   // 4. Birta hvort spilari eða tölva vann
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
