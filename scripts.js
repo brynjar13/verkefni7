@@ -81,12 +81,35 @@ function checkGame(player, computer) {
 function round() {
   // TODO útfæra
   // 1. Spyrja um hvað spilað, ef cancel, hætta
+  let player = prompt('Veldu 1 fyrir skæri, 2 fyrir blað, 3 fyrir steinn')
+  if (player === null) {
+    return;
+  }
   // 2. Ef ógilt, tölva vinnur
+  if (player !== '1' && player !== '2' && player !== '3') {
+    alert('þetta er ekki löglegt gildi, tölva vinnur')
+    return -1
+  }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 2 + 1)` sem skilar heiltölu á [1, 3]
+  let computer = Math.floor(Math.random() * 2 + 1)
   // 4. Nota `checkGame()` til að finna hver vann
-  // 5. Birta hver vann
-  // 6. Skila hver vann
+  if (checkGame(player,computer) === -1) {
+    alert('tölva vinnur')
+    return -1
+  }
+  
+  if (checkGame(player,computer) === 0) {
+    alert('jafntefli')
+    return 0
+  }
+
+  if (checkGame(player,computer) === 1) {
+    alert('þú vinnur')
+    return 1
+  }
 }
+// 5. Birta hver vann
+// 6. Skila hver vann
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
 
 /**
