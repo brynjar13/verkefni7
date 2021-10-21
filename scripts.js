@@ -6,6 +6,9 @@
 /** Hámarks fjöldi best-of leikja, ætti að vera jákvæð heiltala stærri en 0 */
 const MAX_BEST_OF = 10;
 
+/** breytur fyrir while lykkjuna */
+let j;
+let k;
 /** Global breyta sem heldur utan um heildar sigra */
 let wins = 0;
 
@@ -129,13 +132,17 @@ function play() {
 
   switch (fl) {
     case 1:
-      for (let i = 0; i < fl; i++) {
+      for (let i = 0; i < fl;) {
         let r = round();
         if (r === 1) {
           i++;
+          wins++;
+          return wins;
         }
         else if (r === -1) {
           i++;
+          losses++;
+          return losses;
         }
         else if (r === null) {
           alert('Þú hættir við leik');
@@ -146,15 +153,25 @@ function play() {
         }
       }
     case 3:
-      for (let i = 0; i < fl; i++) {
+      j = 0;
+      k = 0;
+      while (true) {
         let r = round();
-        let j = 0;
-        let k = 0;
         if (r === 1) {
-          j++;
+          j++;       
+          wins++;
+          if (j === 2) {
+            alert('Þú vinnur')
+            break;
+          }
         }
         else if (r === -1) {
           k--;
+          losses++;
+          if (k === -2) {
+            alert('þú tapar')
+            break;
+          }
         }
         else if (r === null) {
           alert('Þú hættir við leik');
@@ -164,6 +181,36 @@ function play() {
           {};
         }
       }
+    case 5:
+      j = 0;
+      k = 0;
+      while (true) {
+        let r = round();
+        if (r === 1) {
+          j++;       
+          wins++;
+          if (j === 3) {
+            alert('Þú vinnur')
+            break;
+          }
+        }
+        else if (r === -1) {
+          k--;
+          losses++;
+          if (k === -3) {
+            alert('þú tapar')
+            break;
+          }
+        }
+        else if (r === null) {
+          alert('Þú hættir við leik');
+          break;
+        }
+        else {
+          {};
+        }
+      }
+
 
   }
   // 4. Birta hvort spilari eða tölva vann
