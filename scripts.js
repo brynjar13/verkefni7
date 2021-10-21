@@ -12,6 +12,7 @@ let wins = 0;
 /** Global breyta sem heldur utan um heildar töp */
 let losses = 0;
 
+let leikir = 0;
 /**
  * Athugar hvort gefin tala sé gild sem best-of gildi.
  * @param {number} bestOf Tala sem skal athuga
@@ -129,17 +130,18 @@ function play() {
   else {
     let j;
     let k;
-    let stoppari = true
     switch (fl) {
       case 1:
-        while (stoppari) {
+        while (true) {
           let r = round()
           if (r === 1) {
             wins++;
+            leikir++;
             alert('þú vannst');
             return;
           } else if (r === -1) {
             losses++;
+            leikir++;
             alert('Þú tapaðir');
             return;
           } else if (r === null) {
@@ -156,6 +158,7 @@ function play() {
           let r = round()
           if (r === 1) {
             wins++;
+            leikir++;
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 2) {
@@ -164,6 +167,7 @@ function play() {
             }
           } else if (r === -1) {
             losses++;
+            leikir++;
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 2) {
@@ -184,6 +188,7 @@ function play() {
           let r = round()
           if (r === 1) {
             wins++;
+            leikir++;
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 3) {
@@ -192,6 +197,7 @@ function play() {
             }
           } else if (r === -1) {
             losses++;
+            leikir++;
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 3) {
@@ -212,6 +218,7 @@ function play() {
           let r = round()
           if (r === 1) {
             wins++;
+            leikir++;
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 4) {
@@ -220,6 +227,7 @@ function play() {
             }
           } else if (r === -1) {
             losses++;
+            leikir++;
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 4) {
@@ -240,6 +248,7 @@ function play() {
           let r = round()
           if (r === 1) {
             wins++;
+            leikir++;
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 5) {
@@ -248,6 +257,7 @@ function play() {
             }
           } else if (r === -1) {
             losses++;
+            leikir++;
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 5) {
@@ -271,6 +281,10 @@ function play() {
  * Birtir stöðu spilara.
  */
 function games() {
-  // TODO útfæra
+  console.log(`Þú hefur spilað ${leikir} leiki`);
+  if (leikir >= 1) {
+    console.log(`Þú hefur unnið ${wins} leiki sem er ${(100*wins/leikir).toFixed(2)}%`);
+    console.log(`Þú hefur unnið ${losses} leiki sem er ${(100*losses/leikir).toFixed(2)}%`);
+  }
 }
 // Hér getum við ekki skrifað test þar sem fallið les úr global state
