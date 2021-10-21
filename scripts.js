@@ -130,6 +130,24 @@ function play() {
     let j;
     let k;
     switch (fl) {
+      case 1:
+        while (true) {
+          let r = round()
+          if (r === 1) {
+            wins++;
+            console.log('þú vannst');
+            break;
+          } else if (r === -1) {
+            losses++;
+            console.log('Þú tapaðir');
+            break;
+          } else if (r === null) {
+            console.log('þú hættir leik');
+            break;
+          } else {
+            {};
+          }
+        }
       case 3:
         k = 0
         j = 0
@@ -146,6 +164,84 @@ function play() {
             losses++;
             j--;
             if (j === -2) {
+              console.log('þú tapaðir');
+              break;
+            }
+          } else if (r === null) {
+            console.log('þú hættir leik');
+            break;
+          } else {
+            {};
+          }
+        }
+      case 5:
+        k = 0
+        j = 0
+        while (true) {
+          let r = round()
+          if (r === 1) {
+            wins++;
+            k++;
+            if (k === 3) {
+              console.log('þú vannst');
+              break;
+            }
+          } else if (r === -1) {
+            losses++;
+            j--;
+            if (j === -3) {
+              console.log('þú tapaðir');
+              break;
+            }
+          } else if (r === null) {
+            console.log('þú hættir leik');
+            break;
+          } else {
+            {};
+          }
+        }
+      case 7:
+        k = 0
+        j = 0
+        while (true) {
+          let r = round()
+          if (r === 1) {
+            wins++;
+            k++;
+            if (k === 4) {
+              console.log('þú vannst');
+              break;
+            }
+          } else if (r === -1) {
+            losses++;
+            j--;
+            if (j === -4) {
+              console.log('þú tapaðir');
+              break;
+            }
+          } else if (r === null) {
+            console.log('þú hættir leik');
+            break;
+          } else {
+            {};
+          }
+        }
+      case 9:
+        k = 0
+        j = 0
+        while (true) {
+          let r = round()
+          if (r === 1) {
+            wins++;
+            k++;
+            if (k === 5) {
+              console.log('þú vannst');
+              break;
+            }
+          } else if (r === -1) {
+            losses++;
+            j--;
+            if (j === -5) {
               console.log('þú tapaðir');
               break;
             }
