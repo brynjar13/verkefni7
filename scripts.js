@@ -129,21 +129,22 @@ function play() {
   else {
     let j;
     let k;
+    let stoppari = true
     switch (fl) {
       case 1:
-        while (true) {
+        while (stoppari) {
           let r = round()
           if (r === 1) {
             wins++;
-            console.log('þú vannst');
-            break;
+            alert('þú vannst');
+            return;
           } else if (r === -1) {
             losses++;
-            console.log('Þú tapaðir');
-            break;
+            alert('Þú tapaðir');
+            return;
           } else if (r === null) {
-            console.log('þú hættir leik');
-            break;
+            alert('þú hættir leik');
+            return;
           } else {
             {};
           }
@@ -156,20 +157,22 @@ function play() {
           if (r === 1) {
             wins++;
             k++;
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 2) {
-              console.log('þú vannst');
-              break;
+              alert('þú vannst');
+              return;
             }
           } else if (r === -1) {
             losses++;
-            j--;
-            if (j === -2) {
-              console.log('þú tapaðir');
-              break;
+            j++;
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            if (j === 2) {
+              alert('þú tapaðir');
+              return;
             }
           } else if (r === null) {
-            console.log('þú hættir leik');
-            break;
+            alert('þú hættir leik');
+            return;
           } else {
             {};
           }
@@ -182,20 +185,22 @@ function play() {
           if (r === 1) {
             wins++;
             k++;
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 3) {
-              console.log('þú vannst');
-              break;
+              alert('þú vannst');
+              return;
             }
           } else if (r === -1) {
             losses++;
-            j--;
-            if (j === -3) {
-              console.log('þú tapaðir');
-              break;
+            j++;
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            if (j === 3) {
+              alert('þú tapaðir');
+              return;
             }
           } else if (r === null) {
-            console.log('þú hættir leik');
-            break;
+            alert('þú hættir leik');
+            return;
           } else {
             {};
           }
@@ -208,20 +213,22 @@ function play() {
           if (r === 1) {
             wins++;
             k++;
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 4) {
-              console.log('þú vannst');
-              break;
+              alert('þú vannst');
+              return;
             }
           } else if (r === -1) {
             losses++;
-            j--;
-            if (j === -4) {
-              console.log('þú tapaðir');
-              break;
+            j++;
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            if (j === 4) {
+              alert('þú tapaðir');
+              return;
             }
           } else if (r === null) {
-            console.log('þú hættir leik');
-            break;
+            alert('þú hættir leik');
+            return;
           } else {
             {};
           }
@@ -234,20 +241,22 @@ function play() {
           if (r === 1) {
             wins++;
             k++;
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 5) {
-              console.log('þú vannst');
-              break;
+              alert('þú vannst');
+              return;
             }
           } else if (r === -1) {
             losses++;
-            j--;
-            if (j === -5) {
-              console.log('þú tapaðir');
-              break;
+            j++;
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            if (j === 5) {
+              alert('þú tapaðir');
+              return;
             }
           } else if (r === null) {
-            console.log('þú hættir leik');
-            break;
+            alert('þú hættir leik');
+            return;
           } else {
             {};
           }
