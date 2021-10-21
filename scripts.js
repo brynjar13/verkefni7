@@ -6,9 +6,6 @@
 /** Hámarks fjöldi best-of leikja, ætti að vera jákvæð heiltala stærri en 0 */
 const MAX_BEST_OF = 10;
 
-/** breytur fyrir while lykkjuna */
-let j;
-let k;
 /** Global breyta sem heldur utan um heildar sigra */
 let wins = 0;
 
@@ -129,149 +126,37 @@ function play() {
     return console.error('þarf að vera oddatala á bilinu 0-10');
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
-
-  switch (fl) {
-    case 1:
-      for (let i = 0; i < fl;) {
-        let r = round();
-        if (r === 1) {
-          i++;
-          wins++;
-          return wins;
+  else {
+    let j;
+    let k;
+    switch (fl) {
+      case 3:
+        k = 0
+        j = 0
+        while (true) {
+          let r = round()
+          if (r === 1) {
+            wins++;
+            k++;
+            if (k === 2) {
+              console.log('þú vannst');
+              break;
+            }
+          } else if (r === -1) {
+            losses++;
+            j--;
+            if (j === -2) {
+              console.log('þú tapaðir');
+              break;
+            }
+          } else if (r === null) {
+            console.log('þú hættir leik');
+            break;
+          } else {
+            {};
+          }
         }
-        else if (r === -1) {
-          i++;
-          losses++;
-          return losses;
-        }
-        else if (r === null) {
-          alert('Þú hættir við leik');
-          break;
-        }
-        else {
-          {};
-        }
-      }
-    
-    case 3:
-    j = 0;
-    k = 0;
-    while (true) {
-      let r = round();
-      if (r === 1) {
-        j++;       
-        wins++;
-        if (j === 2) {
-          alert('Þú vinnur')
-          break;
-        }
-      }
-      else if (r === -1) {
-        k--;
-        losses++;
-        if (k === -2) {
-          alert('þú tapar')
-          break;
-        }
-      }
-      else if (r === null) {
-        alert('Þú hættir við leik');
-        break;
-      }
-      else {
-        {};
-      }
     }
-
-    case 5:
-      j = 0;
-      k = 0;
-      while (true) {
-        let r = round();
-        if (r === 1) {
-          j++;       
-          wins++;
-          if (j === 3) {
-            alert('Þú vinnur')
-            break;
-          }
-        }
-        else if (r === -1) {
-          k--;
-          losses++;
-          if (k === -3) {
-            alert('þú tapar')
-            break;
-          }
-        }
-        else if (r === null) {
-          alert('Þú hættir við leik');
-          break;
-        }
-        else {
-          {};
-        }
-      }
-
-    case 7:
-      j = 0;
-      k = 0;
-      while (true) {
-        let r = round();
-        if (r === 1) {
-          j++;       
-          wins++;
-          if (j === 4) {
-            alert('Þú vinnur')
-            break;
-          }
-        }
-        else if (r === -1) {
-          k--;
-          losses++;
-          if (k === -4) {
-            alert('þú tapar')
-            break;
-          }
-        }
-        else if (r === null) {
-          alert('Þú hættir við leik');
-          break;
-        }
-        else {
-          {};
-        }
-      }
-
-    case 9:
-      j = 0;
-      k = 0;
-      while (true) {
-        let r = round();
-        if (r === 1) {
-          j++;       
-          wins++;
-          if (j === 5) {
-            alert('Þú vinnur')
-            break;
-          }
-        }
-        else if (r === -1) {
-          k--;
-          losses++;
-          if (k === -5) {
-            alert('þú tapar')
-            break;
-          }
-        }
-        else if (r === null) {
-          alert('Þú hættir við leik');
-          break;
-        }
-        else {
-          {};
-        }
-      }
   }
   // 4. Birta hvort spilari eða tölva vann
 }
