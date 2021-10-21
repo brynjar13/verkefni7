@@ -152,35 +152,37 @@ function play() {
           {};
         }
       }
+    
     case 3:
-      j = 0;
-      k = 0;
-      while (true) {
-        let r = round();
-        if (r === 1) {
-          j++;       
-          wins++;
-          if (j === 2) {
-            alert('Þú vinnur')
-            break;
-          }
-        }
-        else if (r === -1) {
-          k--;
-          losses++;
-          if (k === -2) {
-            alert('þú tapar')
-            break;
-          }
-        }
-        else if (r === null) {
-          alert('Þú hættir við leik');
+    j = 0;
+    k = 0;
+    while (true) {
+      let r = round();
+      if (r === 1) {
+        j++;       
+        wins++;
+        if (j === 2) {
+          alert('Þú vinnur')
           break;
         }
-        else {
-          {};
+      }
+      else if (r === -1) {
+        k--;
+        losses++;
+        if (k === -2) {
+          alert('þú tapar')
+          break;
         }
       }
+      else if (r === null) {
+        alert('Þú hættir við leik');
+        break;
+      }
+      else {
+        {};
+      }
+    }
+
     case 5:
       j = 0;
       k = 0;
@@ -211,7 +213,65 @@ function play() {
         }
       }
 
+    case 7:
+      j = 0;
+      k = 0;
+      while (true) {
+        let r = round();
+        if (r === 1) {
+          j++;       
+          wins++;
+          if (j === 4) {
+            alert('Þú vinnur')
+            break;
+          }
+        }
+        else if (r === -1) {
+          k--;
+          losses++;
+          if (k === -4) {
+            alert('þú tapar')
+            break;
+          }
+        }
+        else if (r === null) {
+          alert('Þú hættir við leik');
+          break;
+        }
+        else {
+          {};
+        }
+      }
 
+    case 9:
+      j = 0;
+      k = 0;
+      while (true) {
+        let r = round();
+        if (r === 1) {
+          j++;       
+          wins++;
+          if (j === 5) {
+            alert('Þú vinnur')
+            break;
+          }
+        }
+        else if (r === -1) {
+          k--;
+          losses++;
+          if (k === -5) {
+            alert('þú tapar')
+            break;
+          }
+        }
+        else if (r === null) {
+          alert('Þú hættir við leik');
+          break;
+        }
+        else {
+          {};
+        }
+      }
   }
   // 4. Birta hvort spilari eða tölva vann
 }
