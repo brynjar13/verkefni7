@@ -126,26 +126,45 @@ function play() {
     return console.error('þarf að vera oddatala á bilinu 0-10');
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
+
   switch (fl) {
     case 1:
-      let i = 0
-      let j = 0
-      while (i !== 1 || j !== -1) {
+      for (let i = 0; i < fl; i++) {
         let r = round();
         if (r === 1) {
           i++;
         }
         else if (r === -1) {
-          j--;
+          i++;
         }
         else if (r === null) {
-          alert('Þú hættir leik')
+          alert('Þú hættir við leik');
           break;
         }
         else {
           {};
         }
       }
+    case 3:
+      for (let i = 0; i < fl; i++) {
+        let r = round();
+        let j = 0;
+        let k = 0;
+        if (r === 1) {
+          j++;
+        }
+        else if (r === -1) {
+          k--;
+        }
+        else if (r === null) {
+          alert('Þú hættir við leik');
+          break;
+        }
+        else {
+          {};
+        }
+      }
+
   }
   // 4. Birta hvort spilari eða tölva vann
 }
