@@ -137,16 +137,13 @@ function play() {
           if (r === 1) {
             wins++;
             leikir++;
-            alert('þú vannst');
-            return;
+            return alert('þú vannst');
           } else if (r === -1) {
             losses++;
             leikir++;
-            alert('Þú tapaðir');
-            return;
+            return alert('Þú tapaðir');
           } else if (r === null) {
-            alert('þú hættir leik');
-            return;
+            return alert('þú hættir leik');
           } else {
             {};
           }
@@ -162,8 +159,7 @@ function play() {
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 2) {
-              alert('þú vannst');
-              return;
+              return alert('þú vannst');
             }
           } else if (r === -1) {
             losses++;
@@ -171,12 +167,10 @@ function play() {
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 2) {
-              alert('þú tapaðir');
-              return;
+              return alert('þú tapaðir');
             }
           } else if (r === null) {
-            alert('þú hættir leik');
-            return;
+            return alert('þú hættir leik');
           } else {
             {};
           }
@@ -192,8 +186,7 @@ function play() {
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 3) {
-              alert('þú vannst');
-              return;
+              return alert('þú vannst');
             }
           } else if (r === -1) {
             losses++;
@@ -201,12 +194,10 @@ function play() {
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 3) {
-              alert('þú tapaðir');
-              return;
+              return alert('þú tapaðir');
             }
           } else if (r === null) {
-            alert('þú hættir leik');
-            return;
+            return alert('þú hættir leik');
           } else {
             {};
           }
@@ -222,8 +213,7 @@ function play() {
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 4) {
-              alert('þú vannst');
-              return;
+              return alert('þú vannst');
             }
           } else if (r === -1) {
             losses++;
@@ -231,12 +221,10 @@ function play() {
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 4) {
-              alert('þú tapaðir');
-              return;
+              return alert('þú tapaðir');
             }
           } else if (r === null) {
-            alert('þú hættir leik');
-            return;
+            return alert('þú hættir leik');
           } else {
             {};
           }
@@ -252,8 +240,7 @@ function play() {
             k++;
             alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
             if (k === 5) {
-              alert('þú vannst');
-              return;
+              return alert('þú vannst');
             }
           } else if (r === -1) {
             losses++;
@@ -261,12 +248,10 @@ function play() {
             j++;
             alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
             if (j === 5) {
-              alert('þú tapaðir');
-              return;
+              return alert('þú tapaðir');
             }
           } else if (r === null) {
-            alert('þú hættir leik');
-            return;
+            return alert('þú hættir leik');
           } else {
             {};
           }
