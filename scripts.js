@@ -32,7 +32,7 @@ function isValidBestOf(bestOf) {
 // console.assert(isValidBestOf(-3) === false, '-3 er valid bestof');
 
 function playAsText(play) {
-  let num = parseInt(play,10)
+  let num = parseInt(play,10);
   if (num === 1) {
     return 'Skæri';
   }
@@ -149,15 +149,15 @@ function play() {
           }
         }
       case 3:
-        k = 0
-        j = 0
+        k = 0;
+        j = 0;
         while (true) {
           let r = round()
           if (r === 1) {
             wins++;
             leikir++;
             k++;
-            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`);
             if (k === 2) {
               return alert('þú vannst');
             }
@@ -165,7 +165,7 @@ function play() {
             losses++;
             leikir++;
             j++;
-            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`);
             if (j === 2) {
               return alert('þú tapaðir');
             }
@@ -176,15 +176,15 @@ function play() {
           }
         }
       case 5:
-        k = 0
-        j = 0
+        k = 0;
+        j = 0;
         while (true) {
           let r = round()
           if (r === 1) {
             wins++;
             leikir++;
             k++;
-            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`);
             if (k === 3) {
               return alert('þú vannst');
             }
@@ -192,7 +192,7 @@ function play() {
             losses++;
             leikir++;
             j++;
-            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`);
             if (j === 3) {
               return alert('þú tapaðir');
             }
@@ -203,15 +203,15 @@ function play() {
           }
         }
       case 7:
-        k = 0
-        j = 0
+        k = 0;
+        j = 0;
         while (true) {
           let r = round()
           if (r === 1) {
             wins++;
             leikir++;
             k++;
-            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`);
             if (k === 4) {
               return alert('þú vannst');
             }
@@ -219,7 +219,7 @@ function play() {
             losses++;
             leikir++;
             j++;
-            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`);
             if (j === 4) {
               return alert('þú tapaðir');
             }
@@ -230,15 +230,15 @@ function play() {
           }
         }
       case 9:
-        k = 0
-        j = 0
+        k = 0;
+        j = 0;
         while (true) {
-          let r = round()
+          let r = round();
           if (r === 1) {
             wins++;
             leikir++;
             k++;
-            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`)
+            alert(`þú vannst þessa umferð staðan er ${k} - ${j}`);
             if (k === 5) {
               return alert('þú vannst');
             }
@@ -246,7 +246,7 @@ function play() {
             losses++;
             leikir++;
             j++;
-            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`)
+            alert(`þú tapaðir þessari umferð staðan er ${k} - ${j}`);
             if (j === 5) {
               return alert('þú tapaðir');
             }
