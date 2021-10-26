@@ -95,7 +95,7 @@ function round() {
     return -1;
   }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 2 + 1)` sem skilar heiltölu á [1, 3]
-  let computer = Math.floor(Math.random() * 2 + 1);
+  let computer = Math.floor(Math.random() * 3 + 1);
   // 4. Nota `checkGame()` til að finna hver vann
   if (checkGame(player,computer) === -1) {
     alert(`þú valdir ${playAsText(player)} og tölvan valdi ${playAsText(computer)}, þú tapar`);
@@ -269,7 +269,7 @@ function games() {
   console.log(`Þú hefur spilað ${leikir} leiki`);
   if (leikir >= 1) {
     console.log(`Þú hefur unnið ${wins} leiki sem er ${(100*wins/leikir).toFixed(2)}%`);
-    console.log(`Þú hefur unnið ${losses} leiki sem er ${(100*losses/leikir).toFixed(2)}%`);
+    console.log(`Þú hefur tapað ${losses} leiki sem er ${(100*losses/leikir).toFixed(2)}%`);
   }
 }
 // Hér getum við ekki skrifað test þar sem fallið les úr global state
